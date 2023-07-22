@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+	<style>
+		tr,td,th
+		{
+			border: 2px solid black;
+			border-spacing: 0;
+		}
+	</style>
+	<script>
+function ga() {
+	 
+  var s1 = document.getElementById("id1").value;
+  document.getElementById("id5").innerHTML = "NAME: " + s1;
+  var s2 = document.getElementById("id2").value;
+  document.getElementById("id6").innerHTML = "D.O.B: " + s2;
+  var s3 = document.getElementById("id3").value;
+  document.getElementById("id7").innerHTML = "GENDER: " + s3;
+
+  var fileInput = document.getElementById("id4");
+  
+   var file = fileInput.files[0];
+  
+  var reader = new FileReader();
+  
+  reader.onload = function (e) {
+    document.getElementById("id8").src = e.target.result;
+  };
+
+  if (file) {
+    reader.readAsDataURL(file);
+  }
+   var container = document.getElementById("d1");; /* full page */
+                html2canvas(container, { allowTaint: true }).then(function (canvas) {
+
+                    var link = document.createElement("a");
+                    document.body.appendChild(link);
+                    link.download = "html_img.jpg";
+                    link.href = canvas.toDataURL("image/jpeg");
+                    link.target = '_blank';
+                    link.click();
+                });
+}
+	</script>
+	</head>
+<body>
+	<div>
+	<p style="background: red;color: white;text-align: center;"><b>AADHAAR ENROLMENT/ CORRECTION/ UPDATE FORM</b></p>
+	<table cellspacing="0">
+		<tr>
+			<th>1.
+			</th>
+			<th>full name:
+			</th>
+			
+			<th><input id="id1" style="border: none;outline: none;">
+			</th>
+			<th>2.
+			</th>
+			<th>Gender:
+			</th>
+			<th><select name="gen" id="id3">
+				<option value="choose">-choose-</option>
+  <option value="male">male</option>
+  <option value="female">female</option>
+  
+</select>
+			</th>
+		</tr>
+		<tr>
+			<th>3.
+			</th>
+			<th>D.O.B:
+			</th>
+			<th><input id="id2" style="border: none;outline: none;">
+			</th>
+			<th>4.
+			</th>
+			<th>Mobile number:
+			</th>
+			<th><input style="border: none;outline: none;">
+			</th>
+		</tr>
+		<tr>
+			<th>5.
+			</th>
+			<th>Email:
+			</th>
+			<th colspan="6"><input style="border: none;outline: none;">
+			</th>
+		</tr>
+		<tr>
+			<th rowspan="3">6.
+			</th>
+			<th>adress: home no
+			</th>
+			<th><input style="border: none;outline: none;">
+			</th>
+			<th>area name:
+			</th>
+			<th colspan="5"><input style="border: none;outline: none;">
+			</th>
+		</tr>
+		<tr>
+			<th>city name:
+			</th>
+			<th><input style="border: none;outline: none;">
+			</th>
+			<th>pin code:
+			</th>
+			<th colspan="5"><input style="border: none;outline: none;">
+			</th>
+		</tr>
+		<tr>
+			<th>district name:
+			</th>
+			<th><input style="border: none;outline: none;">
+			</th>
+			<th>state
+			</th>
+			<th colspan="5"><input style="border: none;outline: none;">
+			</th>
+		</tr>
+		<tr>
+			<th>7.</th>
+			<th>photo:</th>
+			<th colspan="5"><input id="id4" type="file" accept="image/png, image/jpeg">
+			</th>
+		</tr>
+	</table></div>
+	   <a onclick="ga();return false"><h3 style="color: white;background: green;width: 135px;border: 2px solid green;text-align: center;border-radius: 25px">generate aadhar</h3></a></div>
+	   <div  id="d1" style="height: 250px;border-radius: 25px; width: 400px;border: 2px solid black;position: absolute;left: 440px">
+           <p style="background: orange;text-align: center;width: 300px;border-radius: 25;position: absolute;left: 40px">government of india</p>
+            <p style="background: green;text-align: center;width: 300px;border-radius: 25;position: absolute;top:25px;left: 40px">aadhar card</p>
+            <img id="id8" src="download.jpg" alt="download.jpg" style="height: 100px;width: 100px;border: 1px solid black;position: absolute;top:95px;left: 40px">
+            <div style="position: absolute;top:75px;left: 180px">
+            <p id="id5">NAME :XXXX</p>
+            <p id="id6">D.O.B:dd/mm/yyyy</p>
+            <p id="id7">Gender:XXXX</p>
+        </div>
+	   </div>
+	   <p style="background: red;height: 1px;width: 335px;position: absolute;top:490px;left: 470px"></p>
+	   <p style="position: absolute;top:500px;left: 570px">0000 1111 2222</p>
+	</body>
+</html>
